@@ -1,5 +1,5 @@
 ﻿// Executive renewal decision workspace, within Nexbill.
-Object.assign(businessEvents.find(e=>e.id==='workforce'),{summary:'Global Telecom Operator announces workforce reductions as part of a cost-reduction program.',links:[{id:0,value:5200000,renewals:1}],issue:'renewal',action:operationChoices[2],interpretation:'Cost pressure may constrain the renewal budget before revenue or payment history changes.',impact:'Protect the upcoming renewal while keeping service cost and payment terms under review.'});
+Object.assign(businessEvents.find(e=>e.id==='workforce'),{summary:'Global Telecom Operator announces workforce reductions as part of a cost-reduction program.',links:[{id:0,value:5200000,renewals:1}],issue:'renewal',action:operationChoices[2],interpretation:'Cost pressure may constrain the renewal budget before revenue or payment history changes.',impact:'Budget cuts could reduce the scope or delay acceptance of the $5.2M renewal. A price increase may intensify that pressure; a retention package could protect contract value but reduce margin if added service costs are not bounded. Current revenue has not changed.'});
 const decisionDrafts={};
 function decisionKey(r){return r.event.id+':'+r.link.id}
 function workspaceRecord(r){return state().decisions.filter(d=>d.eventId===r.event.id&&['finance-saved','nexbill'].includes(d.source)).at(-1)}
