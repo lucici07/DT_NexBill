@@ -1,79 +1,79 @@
-﻿# NexBill · LeaseAegis Financial Intelligence Workspace
+# NexBill · LeaseAegis Financial Intelligence Workspace
 
-Updated: **22 October 2026**. All application screens are in English.
+Updated: 27 October 2026. Application language: English. Demonstration snapshot: 22 October 2026.
 
-**LeaseAegis is an embedded Financial Intelligence Workspace inside NexBill.** NexBill owns operational records and execution; LeaseAegis owns intelligence, recommendations and decision support.
+LeaseAegis is embedded inside NexBill. NexBill owns operational records and execution; LeaseAegis turns business evidence into financial decisions.
 
-The current experience follows the finalized LeaseAegis deck:
+Business Events → Intelligence Signals → Risk & Opportunity Analysis → Financial Impact → Recommendations → Business Decisions
 
-**Business Events → Intelligence Signals → Risk & Opportunity Analysis → Financial Impact Assessment → Recommendations → Business Decisions**
+## Open
 
-The Executive Overview answers “What requires my attention today?” and opens the connected workflow. The optional Advisor supports the workflow from a side panel.
+Open index.html in Chrome or Edge; press Ctrl + F5 after updating. No build or installation is needed. Keep these five runtime files together:
 
-## Open the current prototype
+- index.html
+- operating-model.js
+- leaseaegis.css
+- operating-model.css
+- nexbill-shell.css
 
-Open **index.html** in Chrome or Edge. Press **Ctrl + F5** after an update. No build or installation is needed. Keep these five files together:
+## Pages and navigation
 
-- `index.html`
-- `leaseaegis.css`
-- `operating-model.css`
-- `nexbill-shell.css`
-- `operating-model.js`
+| Group | Page | Route |
+|---|---|---|
+| Overview | Dashboard: decisions needed today, value delivered and priorities | #dashboard |
+| Intelligence | Business Events: seven cases, including Retail | #events/payment |
+| Intelligence | Customer 360: six customers, associated events and actions | #customer/telecom |
+| Intelligence | Portfolio Optimization: four quadrants, segments and profitability | #portfolio |
+| Intelligence | Forecast Intelligence: quarterly scenarios and revenue buckets | #forecast |
+| Decisions | Decision Center: compare, approve or reject actions | #decisions/payment |
+| Decisions | Outcome Review: historical and measured live results | #outcomes |
 
-The global NexBill navigation opens Billing, Collections, Contracts, Customers and Portfolio record views. The LeaseAegis entry returns to the current intelligence stage and event. Settings, Profile and Notifications provide contextual demonstration dialogs.
-
-Full bilingual walkthrough: **LeaseAegis_Operating_Model_Guide_CN_EN.md**.
+Signals, Risks & Opportunities, Financial Impact and Recommendations remain accessible through the six-step event flow. They highlight Business Events in the sidebar. NexBill Billing, Collections, Contracts, Customers and Portfolio retain their own operational navigation. Customer names open Customer 360; operational record links retain their NexBill destination.
 
 ## Five-minute demonstration
 
-1. On Dashboard, click **Start the walkthrough**.
-2. Review Global Telecom’s **Payment Delay**: $4.5M more than 90 days overdue.
-3. **Examine intelligence signals** → review payment, contract and accounting evidence; distinguish illustrative market context from operational evidence.
-4. Continue to **Risks & Opportunities**, then **Financial Impact**.
-5. **Recommendations** → compare three actions, optionally choose an alternative.
-6. **Decision Center** → enter an owner, rationale, completion date and outcome target; approve or reject.
-7. After approval, click **Open approved action in NexBill**. In the relevant NexBill module, use **Simulate NexBill execution start**, then **Simulate execution completed**. Return to LeaseAegis outcome review.
-8. Record a simulated measured result. A result at or above the target becomes **Business Outcome Achieved**. Below-target results remain **Completed**, with the outcome recorded explicitly.
-9. Return to Dashboard to see the Business Decision Summary update.
+1. Dashboard: read the two positioning statements, Decisions needed today and non-zero Value delivered.
+2. Start the walkthrough → Payment Delay → Signals. Review eight internal domains; external feeds are marked Phase 2.
+3. Risks: Collection High and secondary Renewal Medium.
+4. Financial Impact: review the $4.5M shared overdue AR and quantified consequences.
+5. Recommendations: compare three Collect actions and their tradeoffs.
+6. Decision Center: Approve as recommended → Open approved action in NexBill → Run execution in NexBill. Three tasks complete automatically. Duplicate clicks are blocked; a refreshed execution can resume.
+7. Return to LeaseAegis and record a $1.5M simulated result with evidence. The event becomes Resolved, its score changes from 88 to 55, Top risks updates and measured cash increases.
+8. Portfolio: explore the four quadrants. Forecast: switch to Three renewals slip. Customer 360: inspect Telecom's three events and shared exposure. Outcome Review separates historical pilot results from this session's measurements.
 
-## Demonstration boundaries
+## Data and demonstration boundaries
 
-- Six event scenarios connect to a six-customer illustrative portfolio. Event coverage spans four of those customers.
-- No real NexBill execution, external news feed, credit service or live AI service is connected.
-- Scores, confidence, trend histories and financial scenarios are illustrative, not calibrated predictions.
-- External intelligence provides context; it does not modify the risk score before calibration.
-- Exposure, expected cash timing, annual revenue, profit sensitivity and opportunity value are distinct measures. They are not summed into a single risk total.
-- Payment Delay and Customer Credit Change share Global Telecom’s $4.5M AR. Its Market Event also refers to the same balance. Do not count it repeatedly.
-- The Cloud opportunity is uncontracted. Scenario estimates do not change booked revenue.
-- Decisions and history are stored under `leaseaegis-operating-model-v2` in the current browser only. Previous prototypes use separate storage.
-- The operational views are read-only snapshots. Only workflow execution status is simulated in NexBill; measured outcomes do not rewrite invoices or contracts.
-- Existing saved decisions remain compatible. The interface displays Pending Review and Business Outcome Achieved for the former Recommended and Outcome Achieved states.
-- Approved actions do not count as realized value. Results require a recorded amount and evidence after simulated completion.
-- The dashboard totals cash collected only for the collection outcome. Different outcome types and overlapping credit-exposure reductions are not added to it.
-- No automatic model learning or production integration is represented as operational.
+- Seven events cover five of the six illustrative customers. Healthcare has a Customer 360 page without an active event.
+- Eight internal domains: billing, collection, revenue, contract, change events, assets, profitability and usage.
+- PAST_DECISIONS contains three read-only Q3 pilot examples. It is not stored as live decisions. On a fresh browser, Value delivered shows $0.6M cash collected, $2.7M renewal value, 25.3 days average warning lead time and 2.0 days average decision cycle.
+- Historical examples and measured live results use the same metrics function. Cash, renewal value and profit remain separate. Missing live lead-time data is excluded from the average.
+- External feeds (Phase 2), forecast scenarios (Phase 3) and learning (Phase 4) are demonstrations, not active production capabilities. The Assumptions dialog collects these limitations.
+- Achieved targets mark events Resolved and apply preset post-action scores. Below-target outcomes remain open risks. These rules do not represent model learning.
+- Scores and forecast bands are illustrative. Risk charts use a fixed 0–100 scale.
+- Telecom events share the same $4.5M AR; do not sum it repeatedly. Expansion is uncontracted upside. Revenue exposure is not expected loss.
+- The operational records remain read-only snapshots. Simulated execution and measurements do not rewrite invoices, contracts or balances.
+- Decisions retain the localStorage key leaseaegis-operating-model-v2. Existing Recommended and Outcome Achieved records remain compatible. Records do not synchronize across browsers or users.
+- Advisor offers five preset briefings, including Retail; it has no free-text chat.
 
 ## Validation
 
-`node --check operating-model.js`
+Run:
 
-`node validate-operating-model.cjs`
+    node --check operating-model.js
+    node validate-operating-model.cjs
 
-The validation additionally covers all five NexBill modules, record-to-intelligence round trips, host-only execution guards and global utility dialogs.
+Validation uses installed Chrome and an isolated browser profile. It covers seven event journeys, all six Customer 360 routes, Portfolio/Forecast/Outcomes, seven grouped sidebar links, all five NexBill modules, Retail record links, English-only UI, 1440px/390px layouts, legacy storage, approval/rejection, one-button execution, duplicate guards, refresh recovery, achieved and below-target outcomes, score updates and financial metric separation.
 
-The validation uses installed Chrome and an isolated test browser profile. It covers 36 event/workspace routes, end-to-end navigation, option selection, approval/rejection/reopening, transition guards, measured outcomes above and below target, persistence, escaping, filters, context changes, optional Advisor, and desktop/mobile layout.
+Preview images: preview-operating-dashboard.png, preview-operating-decisions.png, preview-operating-mobile.png.
 
-Preview images: `preview-operating-dashboard.png`, `preview-operating-decisions.png`, `preview-operating-mobile.png`.
+## Documentation and archive
 
-## Earlier versions
-
-- **leaseaegis-workspaces.html** — previous six-workspace LeaseAegis prototype, with `leaseaegis.js` and `leaseaegis.css`.
-- **nexbill-legacy.html** — original NexBill Finance Copilot, using its original scripts and stylesheet.
-- `Nexbill_Finance_Copilot_User_Guide_CN_EN.md` describes the original NexBill prototype, not the current operating-model experience.
+- LeaseAegis_网页交互使用说明_CN.md: Chinese interaction guide.
+- LeaseAegis_Operating_Model_Guide_CN_EN.md: bilingual walkthrough.
+- CODEX_TASK_LeaseAegis_Alignment.md: alignment requirements.
+- archive/: previous HTML prototypes, scripts, styles, validation scripts and screenshots moved with git mv. These are historical references; their tests are not the current acceptance suite. The active shared leaseaegis.css remains at the project root.
+- Older Nexbill Finance Copilot documents describe historical versions.
 
 ## 中文快速入口
 
-打开 **index.html**，看到顶部 **NexBill** 业务导航和左侧 **LeaseAegis** 六步工作区 即为新版。
-
-建议从首页 **Start the walkthrough** 开始，沿页面流程逐步进入决策中心。批准后通过 **Open approved action in NexBill** 进入对应业务模块模拟执行，再返回 LeaseAegis 记录结果。完成不等于收益实现。
-
-完整中英文说明见 **LeaseAegis_Operating_Model_Guide_CN_EN.md**。所有操作仅用于本地演示，不会修改真实 NexBill 数据。
+打开 index.html，按 Ctrl + F5。LeaseAegis 左侧现在有七个分组入口；事件内部仍按六步流程分析。批准行动后进入 NexBill，点击 Run execution in NexBill；完成后返回记录结果。Portfolio、Forecast、Customer 360 和 Outcome Review 可独立进入。所有业务执行及结果均为本地演示。
